@@ -1,0 +1,22 @@
+function dot_product(v1, v2) {
+    let ps = 0;
+    for (let i = 0; i < v1.length; i++) {
+        ps += v1[i] * v2[i];
+    }
+    return ps;
+}
+
+function areOrthogonal(vectors) {
+    for (let i = 0; i < vectors.length; i += 2) {
+        let v1 = vectors[i];
+        let v2 = vectors[i + 1];
+        let dotProduct = dot_product(v1, v2);
+        if (dotProduct !== 0) {
+            console.log("Vector", v1, "and vector", v2, "are not orthogonal.");
+            return false;
+        }
+    }
+    console.log("All vectors are orthogonal.");
+    return true;
+}
+
